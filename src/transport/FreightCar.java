@@ -1,11 +1,10 @@
 package transport;
 
+import drivers.FreightCarDriver;
 
-import drivers.CarDriver;
+public class FreightCar extends Transport<FreightCarDriver> {
 
-public class Car extends Transport<CarDriver> {
-
-    public Car(String brand, String model, double engineVolume, CarDriver driver) {
+    public FreightCar(String brand, String model, double engineVolume, FreightCarDriver driver) {
         super(brand, model, engineVolume, driver);
     }
 
@@ -22,18 +21,18 @@ public class Car extends Transport<CarDriver> {
 
     @Override
     public void calculateMaxSpeed() {
-        double maxSpeed = Math.random() * 40 + 120;
+        double maxSpeed = Math.random() * 40 + 50;
         System.out.println("Максимальная скорость составила " + maxSpeed + " км/час");
     }
 
     @Override
     public void startMovement() {
-        System.out.println("Автомобиль " + getBrand() + " " + getModel() + " начал движение");
+        System.out.println("Грузовик " + getBrand() + " " + getModel() + " начал движение");
     }
 
     @Override
     public void stopMovement() {
-        System.out.println("Автомобиль " + getBrand() + " " + getModel() + " закончил движение");
+        System.out.println("Грузовик " + getBrand() + " " + getModel() + " закончил движение");
     }
 
 }
