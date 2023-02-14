@@ -8,6 +8,12 @@ public abstract class Transport<T extends Driver> implements Competing {
     private double engineVolume;
     private T driver;
 
+    public Transport(String brand, String model, double engineVolume, T driver) {
+        this.brand = (brand == null || brand.isEmpty()) ? "default" : brand;
+        this.model = (model == null || model.isEmpty()) ? "default" : model;
+        setEngineVolume(engineVolume);
+        setDriver(driver);
+    }
 
     public T getDriver() {
         return driver;
@@ -15,13 +21,6 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     public void setDriver(T driver) {
         this.driver = driver;
-    }
-
-    public Transport(String brand, String model, double engineVolume, T driver) {
-        this.brand = (brand == null || brand.isEmpty()) ? "default" : brand;
-        this.model = (model == null || model.isEmpty()) ? "default" : model;
-        setEngineVolume(engineVolume);
-        setDriver(driver);
     }
 
     public String getBrand() {
@@ -42,7 +41,7 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     @Override
     public String toString() {
-        return "Автомобиль " + brand + " " + model +
+        return brand + " " + model +
                 ", объем двигателя: " + engineVolume +
                 ", " + driver.toString();
     }
@@ -50,4 +49,8 @@ public abstract class Transport<T extends Driver> implements Competing {
     public abstract void startMovement();
 
     public abstract void stopMovement();
+
+    public abstract Type getType();
+
+    public abstract void printType();
 }

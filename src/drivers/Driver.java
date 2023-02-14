@@ -46,7 +46,7 @@ public class Driver {
     @Override
     public String toString() {
         return "Водитель: " +
-                "имя водителя " + nameDriver  +
+                "имя водителя " + nameDriver +
                 ", наличие водительского удостоверения " + drivingLicence +
                 ", стаж " + experience +
                 " лет";
