@@ -3,8 +3,8 @@ package transport;
 import drivers.BusDriver;
 
 public class Bus extends Transport<BusDriver> {
-    Capacity capacity;
-    private final Type TYPE = Type.BUS;
+    private final Capacity capacity;
+    private static final Type TYPE = Type.BUS;
 
     public Bus(String brand, String model, double engineVolume, BusDriver driver, Capacity capacity) {
         super(brand, model, engineVolume, driver);
@@ -13,10 +13,6 @@ public class Bus extends Transport<BusDriver> {
 
     public Capacity getCapacity() {
         return capacity;
-    }
-
-    public void setCapacity(Capacity capacity) {
-        this.capacity = capacity;
     }
 
     @Override

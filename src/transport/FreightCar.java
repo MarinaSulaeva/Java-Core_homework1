@@ -3,8 +3,8 @@ package transport;
 import drivers.FreightCarDriver;
 
 public class FreightCar extends Transport<FreightCarDriver> {
-    private CarryingCapacity carryingCapacity;
-    private final Type TYPE = Type.FREIGHTCAR;
+    private final CarryingCapacity carryingCapacity;
+    private static final Type TYPE = Type.FREIGHTCAR;
 
     public FreightCar(String brand, String model, double engineVolume, FreightCarDriver driver, CarryingCapacity carryingCapacity) {
         super(brand, model, engineVolume, driver);
@@ -13,10 +13,6 @@ public class FreightCar extends Transport<FreightCarDriver> {
 
     public CarryingCapacity getCarryingCapacity() {
         return carryingCapacity;
-    }
-
-    public void setCarryingCapacity(CarryingCapacity carryingCapacity) {
-        this.carryingCapacity = carryingCapacity;
     }
 
     @Override

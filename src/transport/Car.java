@@ -4,8 +4,8 @@ package transport;
 import drivers.CarDriver;
 
 public class Car extends Transport<CarDriver> {
-    private TypeBody bodyType;
-    private final Type TYPE = Type.CAR;
+    private final TypeBody bodyType;
+    private static final Type TYPE = Type.CAR;
 
     public Car(String brand, String model, double engineVolume, CarDriver driver, TypeBody bodyType) {
         super(brand, model, engineVolume, driver);
@@ -14,10 +14,6 @@ public class Car extends Transport<CarDriver> {
 
     public TypeBody getBodyType() {
         return bodyType;
-    }
-
-    public void setBodyType(TypeBody bodyType) {
-        this.bodyType = bodyType;
     }
 
     @Override
