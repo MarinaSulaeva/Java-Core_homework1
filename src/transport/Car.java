@@ -4,9 +4,21 @@ package transport;
 import drivers.CarDriver;
 
 public class Car extends Transport<CarDriver> {
+    private final TypeBody bodyType;
+    private static final Type TYPE = Type.CAR;
 
-    public Car(String brand, String model, double engineVolume, CarDriver driver) {
+    public Car(String brand, String model, double engineVolume, CarDriver driver, TypeBody bodyType) {
         super(brand, model, engineVolume, driver);
+        this.bodyType = bodyType;
+    }
+
+    public TypeBody getBodyType() {
+        return bodyType;
+    }
+
+    @Override
+    public String toString() {
+        return TYPE + super.toString() + ", " + bodyType.toString();
     }
 
     @Override
@@ -34,6 +46,20 @@ public class Car extends Transport<CarDriver> {
     @Override
     public void stopMovement() {
         System.out.println("Автомобиль " + getBrand() + " " + getModel() + " закончил движение");
+    }
+
+    @Override
+    public Type getType() {
+        return TYPE;
+    }
+
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(bodyType);
+        }
     }
 
 }

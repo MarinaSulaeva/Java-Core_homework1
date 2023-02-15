@@ -3,8 +3,21 @@ package transport;
 import drivers.BusDriver;
 
 public class Bus extends Transport<BusDriver> {
-    public Bus(String brand, String model, double engineVolume, BusDriver driver) {
+    private final Capacity capacity;
+    private static final Type TYPE = Type.BUS;
+
+    public Bus(String brand, String model, double engineVolume, BusDriver driver, Capacity capacity) {
         super(brand, model, engineVolume, driver);
+        this.capacity = capacity;
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    @Override
+    public String toString() {
+        return TYPE + super.toString() + ", " + capacity.toString();
     }
 
     @Override
@@ -32,5 +45,20 @@ public class Bus extends Transport<BusDriver> {
     @Override
     public void stopMovement() {
         System.out.println("Автобус " + getBrand() + " " + getModel() + " закончил движение");
+    }
+
+    @Override
+    public Type getType() {
+        return TYPE;
+    }
+
+    @Override
+    public void printType() {
+        if (capacity == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(capacity);
+        }
+
     }
 }
