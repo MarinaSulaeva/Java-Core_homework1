@@ -62,4 +62,9 @@ public class FreightCar extends Transport<FreightCarDriver> {
 
     }
 
+    @Override
+    public void goDiagnosed() {
+        System.out.println("Грузовому автомобилю " + getBrand() + " " + getModel() + " необходимо пройти диагностику");
+    }
+
 }

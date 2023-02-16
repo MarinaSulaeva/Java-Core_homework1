@@ -30,6 +30,9 @@ public class Main {
             System.out.println(transport.getType() + " " + transport.getBrand() + " " + transport.getModel());
             transport.printType();
         }
+        for (Transport<?> transport : transports) {
+            transport.goDiagnosed();
+        }
     }
 
     public static void printInfo(Transport<?> transport) {

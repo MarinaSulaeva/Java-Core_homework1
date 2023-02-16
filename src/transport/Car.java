@@ -62,4 +62,9 @@ public class Car extends Transport<CarDriver> {
         }
     }
 
+    @Override
+    public void goDiagnosed() {
+        System.out.println("Легковому автомобилю " + getBrand() + " " + getModel() + " необходимо пройти диагностику");
+    }
+
 }

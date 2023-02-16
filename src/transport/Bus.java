@@ -59,6 +59,16 @@ public class Bus extends Transport<BusDriver> {
         } else {
             System.out.println(capacity);
         }
+    }
 
+    @Override
+    public void goDiagnosed() {
+        try {
+            if (TYPE == Type.BUS) {
+                throw new TransportTypeException("Автобусы проходить диагностику не должны");
+            }
+        } catch (TransportTypeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
