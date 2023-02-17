@@ -31,7 +31,11 @@ public class Main {
             transport.printType();
         }
         for (Transport<?> transport : transports) {
+            try {
             transport.goDiagnosed();
+        } catch (TransportTypeException e){
+                System.out.println(e.getMessage());
+            }
         }
     }
 
