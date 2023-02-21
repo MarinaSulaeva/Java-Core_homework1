@@ -3,12 +3,14 @@ package transport;
 
 import drivers.CarDriver;
 
+import java.util.List;
+
 public class Car extends Transport<CarDriver> {
     private final TypeBody bodyType;
     private static final Type TYPE = Type.CAR;
 
-    public Car(String brand, String model, double engineVolume, CarDriver driver, TypeBody bodyType) {
-        super(brand, model, engineVolume, driver);
+    public Car(String brand, String model, double engineVolume, CarDriver driver, List<Mechanics> mechanicsList, TypeBody bodyType) {
+        super(brand, model, engineVolume, driver, mechanicsList);
         this.bodyType = bodyType;
     }
 

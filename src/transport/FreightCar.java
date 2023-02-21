@@ -2,12 +2,14 @@ package transport;
 
 import drivers.FreightCarDriver;
 
+import java.util.List;
+
 public class FreightCar extends Transport<FreightCarDriver> {
     private final CarryingCapacity carryingCapacity;
     private static final Type TYPE = Type.FREIGHTCAR;
 
-    public FreightCar(String brand, String model, double engineVolume, FreightCarDriver driver, CarryingCapacity carryingCapacity) {
-        super(brand, model, engineVolume, driver);
+    public FreightCar(String brand, String model, double engineVolume, FreightCarDriver driver, List<Mechanics> mechanicsList, CarryingCapacity carryingCapacity) {
+        super(brand, model, engineVolume, driver, mechanicsList);
         this.carryingCapacity = carryingCapacity;
     }
 
