@@ -69,4 +69,9 @@ public class Car extends Transport<CarDriver> {
         System.out.println("Легковому автомобилю " + getBrand() + " " + getModel() + " необходимо пройти диагностику");
     }
 
+    @Override
+    public boolean checkAbilityToGoInspection() {
+        return true;
+    }
+
 }

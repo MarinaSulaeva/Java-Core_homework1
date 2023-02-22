@@ -69,4 +69,6 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     public abstract void goDiagnosed() throws TransportTypeException;
 
+    public abstract boolean checkAbilityToGoInspection();
+
 }

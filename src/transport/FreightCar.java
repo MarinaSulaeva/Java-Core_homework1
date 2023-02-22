@@ -69,4 +69,9 @@ public class FreightCar extends Transport<FreightCarDriver> {
         System.out.println("Грузовому автомобилю " + getBrand() + " " + getModel() + " необходимо пройти диагностику");
     }
 
+    @Override
+    public boolean checkAbilityToGoInspection() {
+        return true;
+    }
+
 }

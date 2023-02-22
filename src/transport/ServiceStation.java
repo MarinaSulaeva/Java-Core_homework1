@@ -15,7 +15,7 @@ public class ServiceStation {
     }
 
     public void addTransports(Transport transport) {
-        if (transport.getType() != Type.BUS) {
+        if (transport.checkAbilityToGoInspection()) {
             queue.offer(transport);
             System.out.println(transport.getBrand() + " " + transport.getModel() + " успешно добавлен в очередь");
         } else {

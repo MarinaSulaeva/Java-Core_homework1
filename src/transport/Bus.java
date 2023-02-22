@@ -67,4 +67,9 @@ public class Bus extends Transport<BusDriver> {
     public void goDiagnosed() throws TransportTypeException {
         throw new TransportTypeException("Автобусы проходить диагностику не должны");
     }
+
+    @Override
+    public boolean checkAbilityToGoInspection() {
+        return false;
+    }
 }
