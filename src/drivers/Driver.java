@@ -1,5 +1,7 @@
 package drivers;
 
+import java.util.Objects;
+
 public class Driver {
     private final String nameDriver;
     private boolean drivingLicence;
@@ -50,5 +52,18 @@ public class Driver {
                 ", наличие водительского удостоверения " + drivingLicence +
                 ", стаж " + experience +
                 " лет";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return drivingLicence == driver.drivingLicence && experience == driver.experience && nameDriver.equals(driver.nameDriver);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nameDriver, drivingLicence, experience);
     }
 }

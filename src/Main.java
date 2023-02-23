@@ -5,7 +5,9 @@ import drivers.FreightCarDriver;
 import transport.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static transport.CarryingCapacity.*;
 
@@ -49,6 +51,14 @@ public class Main {
         queueOfTransports.addTransports(transportList.get(5));
         queueOfTransports.addTransports(transportList.get(8));
         queueOfTransports.carryOutATechnicalInspection();
+        Set<Driver> driverSet = new HashSet<>();
+        for (Transport transport : transportList) {
+            driverSet.add (transport.getDriver());
+        }
+        System.out.println(driverSet);
+        driverSet.add (transportList.get(1).getDriver());
+        driverSet.add (transportList.get(0).getDriver());
+        System.out.println(driverSet);
     }
     public static void printInfo(Transport<?> transport) {
         System.out.println("Водитель " + transport.getDriver().getNameDriver() + " управляет автомобилем " + transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде");
