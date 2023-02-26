@@ -1,5 +1,7 @@
 package drivers;
 
+import java.util.Objects;
+
 public class BusDriver extends Driver {
     private final String CategoryOfDrivingLicence = "D";
 
