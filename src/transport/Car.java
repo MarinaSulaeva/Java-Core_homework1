@@ -20,7 +20,7 @@ public class Car extends Transport<CarDriver> {
 
     @Override
     public String toString() {
-        return TYPE + super.toString() + ", " + bodyType.toString();
+        return TYPE + " " + super.toString() + ", " + bodyType.toString();
     }
 
     @Override

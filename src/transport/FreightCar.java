@@ -19,7 +19,7 @@ public class FreightCar extends Transport<FreightCarDriver> {
 
     @Override
     public String toString() {
-        return TYPE + super.toString() + ", " + carryingCapacity.toString();
+        return TYPE + " " + super.toString() + ", " + carryingCapacity.toString();
     }
 
     @Override

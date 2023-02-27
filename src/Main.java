@@ -4,10 +4,7 @@ import drivers.Driver;
 import drivers.FreightCarDriver;
 import transport.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static transport.CarryingCapacity.*;
 
@@ -44,8 +41,6 @@ public class Main {
         for (Transport<?> transport : transports) {
             transportList.add(transport);
         }
-        getNameDriverFromList(transportList, 4);
-        getMechanicsFromList(transportList, 8);
         ServiceStation queueOfTransports = new ServiceStation();
         queueOfTransports.addTransports(transportList.get(0));
         queueOfTransports.addTransports(transportList.get(5));
@@ -59,6 +54,25 @@ public class Main {
         driverSet.add (transportList.get(1).getDriver());
         driverSet.add (transportList.get(0).getDriver());
         System.out.println(driverSet);
+        Map<Transport, List> mechanicForTransport = new HashMap<>();
+        // создаем копии объектов транспорта
+        List<Transport> transportListCopy = new ArrayList<>(transportList);
+        mechanicForTransport.put(transportListCopy.get(0),mechanicsForCar);
+        mechanicForTransport.put(transportListCopy.get(1),mechanicsForCar);
+        mechanicForTransport.put(transportListCopy.get(2),mechanicsForCar);
+        mechanicForTransport.put(transportListCopy.get(3),mechanicsForCar);
+        mechanicForTransport.put(transportListCopy.get(4),mechanicsForBus);
+        mechanicForTransport.put(transportListCopy.get(5),mechanicsForBus);
+        mechanicForTransport.put(transportListCopy.get(6),mechanicsForBus);
+        mechanicForTransport.put(transportListCopy.get(7),mechanicsForBus);
+        mechanicForTransport.put(transportListCopy.get(8),mechanicsForTracks);
+        mechanicForTransport.put(transportListCopy.get(9),mechanicsForTracks);
+        mechanicForTransport.put(transportListCopy.get(10),mechanicsForTracks);
+        mechanicForTransport.put(transportListCopy.get(11),mechanicsForTracks);
+        for (Map.Entry<Transport, List> transport: mechanicForTransport.entrySet()) {
+            System.out.println("Транспорт: " + transport.getKey() + ", список механиков: " + transport.getValue());
+        }
+
     }
     public static void printInfo(Transport<?> transport) {
         System.out.println("Водитель " + transport.getDriver().getNameDriver() + " управляет автомобилем " + transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде");

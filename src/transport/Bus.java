@@ -19,7 +19,7 @@ public class Bus extends Transport<BusDriver> {
 
     @Override
     public String toString() {
-        return TYPE + super.toString() + ", " + capacity.toString();
+        return TYPE + " " + super.toString() + ", " + capacity.toString();
     }
 
     @Override
