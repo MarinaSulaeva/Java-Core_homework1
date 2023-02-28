@@ -3,6 +3,7 @@ package transport;
 import drivers.FreightCarDriver;
 
 import java.util.List;
+import java.util.Objects;
 
 public class FreightCar extends Transport<FreightCarDriver> {
     private final CarryingCapacity carryingCapacity;
@@ -74,4 +75,17 @@ public class FreightCar extends Transport<FreightCarDriver> {
         return true;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        FreightCar that = (FreightCar) o;
+        return carryingCapacity == that.carryingCapacity;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), carryingCapacity);
+    }
 }

@@ -53,7 +53,10 @@ public class Main {
         System.out.println(driverSet);
         driverSet.add (transportList.get(1).getDriver());
         driverSet.add (transportList.get(0).getDriver());
-        System.out.println(driverSet);
+        Iterator<Driver> iterName = driverSet.iterator();
+        while (iterName.hasNext()) {
+            System.out.println(iterName.next());
+        }
         Map<Transport, List> mechanicForTransport = new HashMap<>();
         // создаем копии объектов транспорта
         List<Transport> transportListCopy = new ArrayList<>(transportList);
